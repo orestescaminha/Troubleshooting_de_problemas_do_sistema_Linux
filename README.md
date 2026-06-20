@@ -46,6 +46,7 @@ Níveis:
 | 2     | Critical    |
 | 3     | Error       |
 | 4     | Warning     |
+
 Para erros e acima:
 ```bash
 journalctl -p 3 -xb

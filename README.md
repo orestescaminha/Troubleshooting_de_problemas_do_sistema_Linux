@@ -51,6 +51,7 @@ Para erros e acima:
 ```bash
 journalctl -p 3 -xb
 ```
+
 ---
 
 # 3. Procure mensagens do Kernel
@@ -73,6 +74,7 @@ Exemplo:
 ```bash
 dmesg -T | grep -Ei "error|fail|oom|segfault|panic"
 ```
+
 ---
 
 # 4. Verifique se houve falta de memória (OOM Killer)
@@ -106,6 +108,7 @@ Buffer I/O error
 EXT4-fs error
 NVMe timeout
 ```
+
 ---
 
 # 6. Verifique travamentos de programas
@@ -117,6 +120,7 @@ ou
 ```bash
 journalctl | grep -i crash
 ```
+
 ---
 
 # 7. Verifique reinicializações inesperadas
@@ -133,6 +137,7 @@ Se houver reboot sem shutdown, pode indicar:
 * kernel panic;
 * queda de energia;
 * travamento.
+
 ---
 
 # 8. Veja o consumo de CPU
@@ -178,6 +183,7 @@ e
 ```bash
 lastb
 ```
+
 ---
 
 # 10. Verifique serviços que falharam
@@ -188,6 +194,7 @@ Para detalhes:
 ```bash
 systemctl status nome_do_servico
 ```
+
 ---
 
 # 11. Verifique eventos de hardware
@@ -207,6 +214,7 @@ GPU:
 ```bash
 journalctl | grep -Ei "drm|nvidia|amdgpu|i915"
 ```
+
 ---
 
 # 12. Procure mensagens suspeitas
@@ -215,6 +223,7 @@ Uma investigação rápida:
 journalctl -b | grep -Ei \
 "error|fail|warning|critical|panic|segfault|oom|timeout|denied|attack"
 ```
+
 ---
 
 # 13. Estatísticas do boot
@@ -230,6 +239,7 @@ Dependências críticas:
 ```bash
 systemd-analyze critical-chain
 ```
+
 ---
 
 # 14. Resumo do Procedimento de diagnóstico
@@ -254,6 +264,7 @@ systemd-analyze blame
 # Travamentos
 journalctl | grep -Ei "segfault|crash"
 ```
+
 ---
 
 ### Se você suspeita de comprometimento de segurança
@@ -281,7 +292,9 @@ Execute a bash abaixo:
 ```
 Envie o arquivo `diag.txt` para uma AI (ChatGPT, Claude, Gemini,...), explique, se houver, o comportamento anômalo do seu SO e solicite ajuda para interpretar e identificar a causa provável baseado no arquivo enviado.
 
-### Se desejar incluir timestamps e o hostname no arquivo, execute a seguinte bash:
+---
+
+##### Se desejar incluir timestamps e o hostname no arquivo, execute a seguinte bash:
 ```bash
 {
   echo "== journalctl (err, boot) | $(hostname) | $(date -Is) ==";

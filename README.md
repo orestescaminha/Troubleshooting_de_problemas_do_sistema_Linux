@@ -277,7 +277,7 @@ Execute a bash abaixo:
   echo "== last -x =="; last -x
 } > diag.txt 2>&1
 ```
-Envie o arquivo `diag.txt` para uma AI (ChatGPT, Claude, Gemini,...), explique, se hover, o comportamento anômalo do seu SO e solicite ajuda para interpretar e identificar a causa provável baseado no arquivo enviado.
+Envie o arquivo `diag.txt` para uma AI (ChatGPT, Claude, Gemini,...), explique, se houver, o comportamento anômalo do seu SO e solicite ajuda para interpretar e identificar a causa provável baseado no arquivo enviado.
 
 ### Se desejar incluir timestamps e o hostname no arquivo, execute a seguinte bash:
 ```bash
